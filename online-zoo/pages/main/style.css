@@ -1,0 +1,226 @@
+body {
+    width: 100%;
+}
+.wrapper {
+    max-width: 1600px;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+/*-------------------------------шапка--------------------------------*/
+.header {
+
+}
+.header__container {
+    max-width: 1600px;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    color: #fff;
+}
+
+.petStory_online {
+    width: 5%;
+    margin: 14px 0 14px 219px;
+    padding: -2px 0px;
+    border: 1px solid #FFFFFF;
+}
+.petStory_online>h1{
+    margin: 4px 0px 0 0px;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 120%;
+    text-align: center;
+    background: url(../../assets/icons/bamboo.svg) no-repeat;
+    background-position: 10px 19px;
+}
+.about {
+    margin: 0 0 0 4%;
+    color:rgba(249, 128, 75, 1);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+}
+.map {
+    margin: 0 0 0 3.6%;
+}
+.zoos {
+    margin: 0 0 0 3.7%;
+}
+.donate {
+    margin: 0 0 0 3.7%;
+}
+.contact {
+    margin: 0 0 0 3.6%;
+}
+.designed {
+    margin: 0 0 0 27.4%;
+}
+/*--------------------------------панда-------------------------------*/
+.watch_online {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    background: url(../../assets/images/Giant\ Panda.jpg) no-repeat;
+}
+.orange_round {
+    position: absolute;
+    top: 92px;
+    left: 50.4%;
+    height: 465px;
+    width: 465px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 50%;
+}
+.text_watch-animal {
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 105px;
+    line-height: 80px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+.text_watch-animal>span{
+    color: yellow;
+
+}
+.text_button_orange {
+    margin: 10.3% 9.3% 13.3% 50.6%;
+    display: flex;
+    flex-direction:column;
+}
+.orange-button {
+    width: 46%;
+    margin: 9.5% 0 0 27.1%;
+    padding: 0 0 0 0;
+    position: relative;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 52px;
+    text-align: center;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 25px;
+}
+/*-------------------------------bamboo-cap-----------------------------*/
+
+.bamboo_cap_container{
+    display: flex;
+    flex-direction: row;
+}
+.men_and_text {
+    display: flex;
+    flex-direction: row;
+    margin: 1.8% 0 0 13.7%;
+}
+.cap_men>img {
+    width: 100%;
+}
+.cup_text {
+    width: 40%;
+    margin: 0 0 0 7.3%;
+}
+.cup_text>div:nth-child(1) {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    color: #333B41;
+}
+.cup_text>div:nth-child(2) {
+    margin: 22px 0 0 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333B41;
+}
+.cup_text>div:nth-child(3) {
+    margin: 55px 0 0 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+
+}
+.cup_text>div:nth-child(4) {
+    margin: 34px 0 0 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 138%;
+    color: #333B41;
+}
+.cap_flower {
+    position: relative;
+    z-index: 0;
+    margin: -6.2% -6.1% 0 0;
+}
+/*---------------------------about-animal-------------------------------*/
+
+.arrow_left {
+}
+.carton_animal {
+    display: flex;
+    flex-direction: column;
+}
+.carton_animal_top {
+    display: flex;
+    flex-direction: row;
+}
+.carton_animal_down {
+    display: flex;
+    flex-direction: row;
+}
+.panda_card {
+}
+.panda_card_picter {
+}
+.panda_card_text {
+}
+.eagle_card {
+}
+.eagle_card_picter {
+}
+.eagle_card_text {
+}
+.gorills_card {
+}
+.gorills_card_picter {
+}
+.gorills_card_text {
+}
+
+.two-toed {
+}
+.two-toed_card_picter {
+}
+.two-toed_card_text {
+}
+.cheetahs {
+}
+.cheetahs_card_picter {
+}
+.cheetahs_card_text {
+}
+.penguins {
+}
+.penguins_card_picter {
+}
+.penguins_card_text {
+}
