@@ -1,1 +1,11 @@
-{\rtf1}
+.first_section {
+    background-image: url('../../../assets/images/panda_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 386px;
+    width: 100%;
+}
+.head_wrapper {
+
+}
