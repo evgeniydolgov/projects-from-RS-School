@@ -1,3 +1,9 @@
+
+a {
+    text-decoration: none;
+    color: #fff
+}
+
 body {
     width: 100%;
 }
@@ -26,6 +32,13 @@ body {
     color: #fff;
 }
 
+.header__container :active {
+    color: rgba(249, 128, 75, 1);
+}
+.petStory_online :active {
+    color: #fff;
+}
+
 .online_button {
     width: 82px;
     margin: 14px 0 14px 219px;
@@ -42,13 +55,16 @@ body {
     background-position: 10px 19px;
 }
 .about {
-    margin: 0 0 0 4%;
+    margin: 0 0 0 3.8%;
     color:rgba(249, 128, 75, 1);
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 140%;
+}
+.about a {
+    color:rgba(249, 128, 75, 1);
 }
 .map {
     margin: 0 0 0 3.6%;
@@ -67,7 +83,6 @@ body {
 }
 /*--------------------------------панда-------------------------------*/
 .watch_online {
-    position: relative;
     z-index: 1;
     display: flex;
     flex-direction: row;
@@ -118,6 +133,11 @@ body {
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 25px;
 }
+.orange-button:hover {
+    color: #4B9200;
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
+ }
 /*-------------------------------bamboo-cap-----------------------------*/
 
 .bamboo_cap_container{
@@ -213,6 +233,11 @@ body {
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 50%;
 }   
+
+.arrow_left:hover {
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
+}
 .arrow_left>img {
     margin: 0 auto;
 }
@@ -225,6 +250,10 @@ body {
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 50%;
 }
+.arrow_right:hover {
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
+}
 .arrow_right>img {
     margin: 0 auto;
 }
@@ -236,6 +265,15 @@ body {
     display: flex;
     flex-direction: row;
 }
+.animal_wrapper {
+    position: relative;
+    width: 366px;
+    height: 426px;
+    border: 1px solid #fa6f32;
+    border-radius: 5px;
+    overflow: hidden;
+    transform: all 0.5s;
+}
 .carton_animal_top>div {
     margin: 94px 15px 8px 14px;
     border-radius: 5px;
@@ -243,14 +281,66 @@ body {
 }
 .carton_animal_top>div>div>img {
     width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .carton_animal_down>div>div>img {
     width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.5s;
+}
+.carton_animal_down>div>div:hover{
+    position: relative;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.5s;
+    background-color: #F9804B;
+}
+.carton_animal_down>div>div:hover .text_card{
+    position: relative;
+    bottom: 50px;
+    color: #fff;
+    transition: all 0.5s;
+}
+.carton_animal_down>div>div:hover .picter_zoo:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba( 0, 0, 0, 0.5);
+}
+.carton_animal_top>div>div:hover {
+    position: relative;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.5s;
+    background-color: #F9804B;
+}
+.carton_animal_top>div>div:hover .text_card{
+    position: relative;
+    bottom: 50px;
+    color: #fff;
+    transition: all 0.5s;
+}
+.carton_animal_top>div>div:hover .picter_zoo:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba( 0, 0, 0, 0.5);
 }
 .carton_animal_down>div {
+    position: relative;
     margin: 12px 14px 10px 14px;
     border-radius: 5px;
     border: 1px solid rgba(250, 111, 50, 1);
+}
+.text_card{
 }
 .carton_animal_down {
     display: flex;
@@ -274,11 +364,13 @@ body {
 .banana_meat_img img {
    margin: 6px 12px 0 0;
 }
+
 .panda_card_text {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .eagle_card_text {
     display: flex;
     flex-direction: row;
@@ -319,7 +411,7 @@ body {
     display: flex;
     align-items: center;
     justify-content:center;
-    margin: 70px auto 100px auto;
+    margin: 68px auto 100px auto;
     width: 18.8%;
     height: 54px;
     background: #FE9013;
@@ -329,6 +421,11 @@ body {
     line-height: 140%;
     text-transform: uppercase;
     color: #FFFFFF;
+}
+.animal_cartoon_bottom:hover{
+    color: #4B9200;
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
 }
 
 /*--------------------------puck-on-feed----------------------*/
@@ -379,7 +476,7 @@ body {
     line-height: 130%;
     color: #333B41;
 }
-.pick-feed-text :nth-child(3)>span{
+.pick-feed-text :nth-child(3)>a{
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
@@ -388,7 +485,7 @@ body {
     border-bottom: 1px solid #FE9013;;
 }
 .how_it{
-    margin: 63px 0 0 -5px;
+    margin: 60px 0 0 -5px;
     font-weight: 400;
     font-size: 36px;
     line-height: 130%;
@@ -452,7 +549,11 @@ body {
     border: 1px solid  #FE9013;
     background-color: #fff;
 }
+.a_to_button {
+    display: block;
+}
 .pick-and-feed_button {
+    display: block;
     margin: 23px 0 55px 0;
     padding: 16px 6.4%;
     font-weight: 500;
@@ -463,6 +564,11 @@ body {
     color: #FFFFFF;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 25px;
+}
+.pick-and-feed_button:hover {
+    color: #4B9200;
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
 }
 
 /*----------------------------reviews-----------------------*/
@@ -583,7 +689,7 @@ body {
 }
 
 .reviews_bottom {
-    margin: 25px 0 178px 13.7%;
+    margin: 25px 0 180px 13.7%;
     padding: 16px 5.3%;
     align-self: flex-start;
     font-weight: 500;
@@ -595,6 +701,11 @@ body {
     color: #fff;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 5px;
+}
+.reviews_bottom:hover {
+    color: #4B9200;
+    background: rgba(255, 255, 0, 0.597);
+    cursor: pointer;
 }
 
 /*---------------------------footer-------------------------*/
@@ -619,7 +730,7 @@ body {
 .footer_petStory_online>div {
     color: #FFFFFF;
     padding: 0 0 0 0;
-    margin: 2px 0px 0 0px;
+    margin: 2px 0px 5px 0px;
     font-weight: 400;
     font-size: 19px;
     line-height: 120%;
@@ -644,7 +755,7 @@ body {
     margin-right: 5px;
     width: 207px;
     color: #BDBDBD;
-    border: 1px solid #F9804B;
+    border: 1px solid rgba(255, 0, 0, 0.571);
     background: #000000;
 }
 ::placeholder {
@@ -658,10 +769,15 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 140%;
-    color: #4B9200;
+    color: rgba(255, 0, 0, 0.571);
     background: #F1F3F2;
-    border: 1px solid #4B9200;
+    border: 1px solid rgba(255, 0, 0, 0.571);
     border-radius: 5px;
+}
+.footer-form-submit:hover {
+    color: rgba(0, 255, 0, 0.571);
+    border: 1px solid rgba(0, 255, 0, 0.571);
+    cursor: pointer;
 }
 .desktop_petstory_footer button {
     width: 298px;
@@ -677,6 +793,14 @@ body {
     color: #fff;
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
     border-radius: 5px;
+}
+.desktop_petstory_footer button:hover {
+    color: #080907;
+    background: rgb(226, 226, 3);
+    cursor: pointer;
+}
+.desktop_petstory_footer a{
+    display: inline-block;
 }
 .footer_navigation {
     display: flex;
@@ -706,6 +830,9 @@ body {
     display: inline;
     margin: 5px 0 0 10px;
 }
+.social_networks>li>div>a:hover{
+    color: #F9804B;
+}
 .social_networks>li>div:nth-child(1){
     display: flex;
     justify-content: center;
@@ -728,7 +855,11 @@ body {
     line-height: 140%;
     color: #fff;
 }
-.list>li>span {
+
+.list>li>a:active {
+    color: rgba(249, 128, 75, 1);
+}
+.about_footer {
     color: #F9804B;
 }
 .autors {
