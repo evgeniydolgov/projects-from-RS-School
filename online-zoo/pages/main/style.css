@@ -134,9 +134,11 @@ body {
     border-radius: 25px;
 }
 .orange-button:hover {
-    color: #4B9200;
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
+ }
+ .orange-button:active {
+    background: rgba(75, 146, 0, 1);
  }
 /*-------------------------------bamboo-cap-----------------------------*/
 
@@ -222,7 +224,7 @@ body {
     bottom: 0;
     background-image: url(../../assets/images/strelitzia.jpg);
     background-repeat: no-repeat;
-    z-index: 0;
+    z-index: -5;
 }
 .arrow_left {
     height: 62px;
@@ -235,9 +237,12 @@ body {
 }   
 
 .arrow_left:hover {
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.arrow_left:active {
+    background: rgba(75, 146, 0, 1);
+ }
 .arrow_left>img {
     margin: 0 auto;
 }
@@ -251,9 +256,12 @@ body {
     border-radius: 50%;
 }
 .arrow_right:hover {
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.arrow_right:active {
+    background: rgba(75, 146, 0, 1);
+ }
 .arrow_right>img {
     margin: 0 auto;
 }
@@ -423,10 +431,12 @@ body {
     color: #FFFFFF;
 }
 .animal_cartoon_bottom:hover{
-    color: #4B9200;
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.animal_cartoon_bottom:active {
+    background: rgba(75, 146, 0, 1);
+ }
 
 /*--------------------------puck-on-feed----------------------*/
 
@@ -566,10 +576,12 @@ body {
     border-radius: 25px;
 }
 .pick-and-feed_button:hover {
-    color: #4B9200;
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.pick-and-feed_button:active {
+    background: rgba(75, 146, 0, 1);
+ }
 
 /*----------------------------reviews-----------------------*/
 .reviews_about_us {
@@ -651,6 +663,8 @@ body {
     font-size: 15px;
     line-height: 120%;
     color: #767474;
+    overflow: hidden;
+    height: 306px;
 }
 .slider_bar {
     margin: 17px 0 0 0;
@@ -703,14 +717,17 @@ body {
     border-radius: 5px;
 }
 .reviews_bottom:hover {
-    color: #4B9200;
-    background: rgba(255, 255, 0, 0.597);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.reviews_bottom:active {
+    background: rgba(75, 146, 0, 1);
+ }
 
 /*---------------------------footer-------------------------*/
 
 .desktop_petstory_footer {
+    z-index: 2;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -795,10 +812,12 @@ body {
     border-radius: 5px;
 }
 .desktop_petstory_footer button:hover {
-    color: #080907;
-    background: rgb(226, 226, 3);
+    background:rgba(228, 114, 9, 1);
     cursor: pointer;
 }
+.desktop_petstory_footer button:active {
+    background: rgba(75, 146, 0, 1);
+ }
 .desktop_petstory_footer a{
     display: inline-block;
 }
@@ -858,6 +877,9 @@ body {
 
 .list>li>a:active {
     color: rgba(249, 128, 75, 1);
+}
+.list>li>span {
+    color: #F9804B;
 }
 .about_footer {
     color: #F9804B;
