@@ -310,6 +310,10 @@ justify-content: center;
 position: relative;
 }
 
+.form__number:focus{
+    outline: none;
+}
+
 .form__number {
 display: block;
 width: 268px;
@@ -568,9 +572,11 @@ color: #333b41;
 }
 
 .desktop_petstory_footer button:hover {
-    color: #080907;
-    background: rgb(226, 226, 3);
+    background: rgba(228, 114, 9, 1);
     cursor: pointer;
+}
+.desktop_petstory_footer button:active {
+    background: rgba(75, 146, 0, 1);
 }
 
 .footer_navigation {
