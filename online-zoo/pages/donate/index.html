@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,7 +16,7 @@
     <title>Donate-page</title>
 </head>
 <body>
-    <head>
+    <header>
         <div class="head_container">
             <div class="head_wrapper">
                 <a href="../main">
@@ -29,9 +30,10 @@
                     <li><a href="#">Contact us</a></li>
                 </ul>
                 <div class="designed"><a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online?node-id=0%3A1">Designed by ©</a></div>
+                <div class="hamburger_menu"><span></span></div>
             </div>
         </div>
-    </head>
+    </header>
     <section>
         <div class="panda_wrapper">
         </div>
@@ -56,9 +58,9 @@
                     <div>Amount</div>
                     <div class="donate">
                         <form action="#" class="donate__form">
-                            <div class="form-range__container">
-                              <input type="range" min="1" max="8" value="3" class="form__range">
-                              <div class="ticks">
+                            <div class="form-range__container full_desktop">
+                              <input type="range" min="1" max="8" value="3" class="form__range full_desktop">
+                              <div class="ticks full_desktop">
                                 <span class="tick"></span>
                                 <span class="tick"></span>
                                 <span class="tick"></span>
@@ -70,13 +72,53 @@
                                 <hr class="middle-line">
                               </div>
                             </div>
-                            <div class="form-price__wrapper">
+                            <div class="form-price__wrapper full_desktop">
                               <p class="form-price">$5000</p>
                               <p class="form-price">$2000</p>
                               <p class="form-price item_active">$1000</p>
                               <p class="form-price">$500</p>
                               <p class="form-price">$250</p>
                               <p class="form-price">$100</p>
+                              <p class="form-price">$50</p>
+                              <p class="form-price">$25</p>
+                            </div>
+                            <div class="form-range__container small_desktop">
+                                <input type="range" min="1" max="7" value="3" class="form__range small_desktop">
+                            <div class="ticks small_desktop">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <hr class="middle-line">
+                              </div>
+                            </div>
+                            <div class="form-price__wrapper small_desktop">
+                              <p class="form-price">$2000</p>
+                              <p class="form-price item_active">$1000</p>
+                              <p class="form-price">$500</p>
+                              <p class="form-price">$250</p>
+                              <p class="form-price">$100</p>
+                              <p class="form-price">$50</p>
+                              <p class="form-price">$25</p>
+                            </div>
+                            <div class="form-range__container tablet_desktop">
+                                <input type="range" min="1" max="5" value="3" class="form__range tablet_desktop">
+                            <div class="ticks tablet_desktop">
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <span class="tick"></span>
+                                <hr class="middle-line">
+                              </div>
+                            </div>
+                            <div class="form-price__wrapper tablet_desktop">
+                              <p class="form-price">$500</p>
+                              <p class="form-price">$250</p>
+                              <p class="form-price item_active">$100</p>
                               <p class="form-price">$50</p>
                               <p class="form-price">$25</p>
                             </div>
@@ -90,7 +132,7 @@
                               <label for="once" class="form__radio-text">Once</label>
                             </div>
                             <input type="submit" class="form__submit btn" value="Feed a friend now">
-                          </form>
+                        </form>
                     </div>
                     <div class="share_recomend">Share with your friends on social networks </div>
                 </div>
@@ -102,7 +144,7 @@
             <div class="input_online_container">
                 <div class="input_online_wrapper">
                     <a href="../main">
-                        <div class="footer_petStory_online online_button"><div>PetStory online</div></div>
+                        <div class="footer_petStory_online online_button footer_btn"><div>PetStory online</div></div>
                     </a>
                 </div>
                 <div class="footer_input">
@@ -112,8 +154,14 @@
                         <input class="footer-form-submit" type="submit" value="Submit">
                     </div>
                 </div>
+                <ul class="social_networks_mobile">
+                    <li> <div><a href="https://www.facebook.com/"><img src="../../assets/icons/facebool_icon.svg" alt="facebook_icon"></a></div></li>
+                    <li> <div><a href="https://www.twitter.com/"><img src="../../assets/icons/twitter_icon.svg" alt="twit"></a></div></li>
+                    <li> <div><a href="https://www.instagram.com/"><img src="../../assets/icons/instagram_icon.svg" alt="inst"></a></div></li>
+                    <li> <div><a href="https://www.youtube.com/"><img src="../../assets/icons/youtube_icon.svg" alt="youtube"></a></div></li>
+                </ul>
             </div>
-            <a href="../donate"><button>donate for volunteers</button></a>
+            <a href="../donate"><button class="ftn_btn_donate">donate for volunteers</button></a>
             <nav class="footer_navigation">
                 <ul class="social_networks">
                     <li> <div><img src="../../assets/icons/facebool_icon.svg" alt="facebook_icon"></div> <div><a href="https://www.facebook.com/">Facebook</a></div></li>
@@ -122,7 +170,7 @@
                     <li> <div><img src="../../assets/icons/youtube_icon.svg" alt="youtube"></div><div><a href="https://www.youtube.com/">YouTube</a></div></li>
                 </ul>
                 <div class="list_container">
-                    <ul class="list">
+                    <ul class="list list_footer">
                         <li><a href="../main">About</a></li>
                         <li><a href="#">Map</a></li>
                         <li><a href="#">Zoos</a></li>
