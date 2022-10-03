@@ -270,8 +270,13 @@
 @media (max-width: 641px) {
     /*-----------------------------------header 640------------------------*/
     .head_wrapper {
+        background: black;
+        position: fixed;
+        z-index: 5;
         margin: 0 auto;
         padding: 0 22px;
+    }
+    .head_container {
     }
     .footer_petStory_online>h1 {
         color: #fff;
@@ -295,6 +300,7 @@
         display: block;
     }
     .panda_wrapper {
+        margin: 33px 0 0 0;
         background: url(../../assets/images/panda_donate_640.jpg) no-repeat;
         background-size: cover;
         background-position: center center;
