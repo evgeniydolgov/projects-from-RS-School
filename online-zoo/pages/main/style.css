@@ -7,6 +7,14 @@ a {
 body {
     width: 100%;
 }
+.dark {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 3;
+}
 .wrapper {
     max-width: 1600px;
     font-family: 'Roboto', sans-serif;
@@ -18,6 +26,10 @@ body {
 /*-------------------------------шапка--------------------------------*/
 .header {
 
+}
+.menu__sub-list{
+    position: absolute;
+    opacity: 0;
 }
 .hamburger_menu {
     display: none;
@@ -194,6 +206,58 @@ body {
     margin: -6.2% -6.1% 0 0;
 }
 /*---------------------------about-animal-------------------------------*/
+.last-card{
+    display: none;
+}
+.wrappers {
+    width: 1200px;
+    overflow: hidden;
+    position: relative;
+}
+.slider{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    left: -99%;
+  }
+  .slider-down {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    z-index: 5;
+    position: relative;
+    left: -98.5%;
+  }
+  @keyframes move-right {
+    from {left: -1180px;}
+    to {left: -2340px;}
+  }
+  
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1s;
+  }
+  
+  @keyframes move-left {
+    from {left: -1180px;}
+    to {left: 0px;}
+  }
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1s;
+}
+  .Alligator>div>img {
+    max-width: 366px;
+    width: 100%;
+    max-height: 426px;
+    height: 100%;
+  }
 .Alligator_text_small {
     display: none;
 }
@@ -607,6 +671,9 @@ body {
  }
 
 /*----------------------------reviews-----------------------*/
+.off {
+    display: none;
+}
 .reviews_table {
     display: none;
 }
@@ -635,14 +702,25 @@ body {
     line-height: 130%;
     color: #333B41;
 }
+.wrapper_reviews {
+    position: relative;
+    margin: 0 auto;
+    width: 1180px;
+    overflow: hidden;
+}
 .reviews {
-    margin: 15px 0 0 11.8%;
+    width: 3600px;
+    left: 0px;
+    box-sizing: border-box;
+    margin: 15px 0 0 0;
+    position: relative;
     display: flex;
     flex-direction: row;
+    gap: 30px;
+    transition: left 1s ease;
 }
 .all_block {
-    margin-left: 2.1%;
-    width: 16.8%;
+    width: 240px;
     height: 360px;
     position: relative;
     background: #F1F3F2;
@@ -930,3 +1008,37 @@ body {
 .autors>div {
     padding-top: 10px;
 }
+/*------------------------------------------------pop up--------------------------------------------*/
+.popup {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    padding: 20px 36px 17px 17px;
+    background: rgba(241, 243, 242, 0.3);
+    z-index: 4;
+  }
+  .x_popup {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .popup_reviews {
+    width: 265px;
+    height: 389px;
+    background: #f1f3f2;
+    border-radius: 20px;
+    padding: 15px;
+  }
+  .new{
+    font-family: 'Roboto', sans-serif;
+    width: 267px;
+    height: 391px;
+    position: absolute;
+    top: 4%;
+    left: -1%;
+  }
+  

@@ -1,32 +1,72 @@
 @media (max-width: 1599px) {
+    .new{
+        font-family: 'Roboto', sans-serif;
+        width: 267px;
+        height: 391px;
+        position: absolute;
+        top: 4%;
+        left: -1%;
+      }
+    .wrappers {
+        margin: 0 auto;
+        width: 1000px;
+        overflow: hidden;
+        position: relative;
+    }
+    .slider{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        z-index: 5;
+        position: relative;
+        left: -96.1%;
+      }
+      .slider-down {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        z-index: 5;
+        position: relative;
+        left: -95.78%;
+      }
+      @keyframes move-right {
+        from {left: -1180px;}
+        to {left: -1940px;}
+      }
+      @keyframes move-left {
+        from {left: -1180px;}
+        to {left: 0px;}
+    }
+    .animal_wrapper>div>div>img {
+        width: 294px;
+     }
+     .animal_wrapper{
+        width: 294px;
+        height: 354px;
+     }
+     .Alligator>div>img {
+        width: 130%;
+     }
+     .text_card {
+         margin-top: -2px
+     }
+     .section_about_animal {
+         margin-top: 140px;
+     }
+     .panda_card_text {
+         margin: -1px 0 0 2px;
+     }
     .men_and_text {
         margin: 1.8% 0 4.8% 1.8%;
     }
     .cap_flower {
         display: none;
     }
-    .arrow_left {
-        margin: auto 5px auto 5px;
-    }   
-    .arrow_right {
-        margin: auto 5px auto 5px;
-    }
-    .carton_animal_top>div {
-        margin: 0 15px 8px 14px;
-    }
-    .carton_animal_top>div>div>div>img {
-        width: 294px;
-    }
-    .carton_animal_down>div>div>div>img {
-        width: 294px;
-    }
-    .animal_wrapper {
-        width: 294px;
-        height: 354px;
-    }
-    .section_about_animal{
-        margin: 0 auto;
-    }
+
     .pink_container {
         margin: 69px auto 100px auto;
     }
@@ -36,12 +76,55 @@
     .autors {
         margin: 0 50px 50px 0;
     }
-}
 
-@media (max-width: 1200px) {
+    .wrapper_reviews {
+        position: relative;
+        margin: 0 auto;
+        width: 900px;
+        overflow: hidden;
+    }    .all_block {
+        width: 288px;
+        height: 360px;
+        position: relative;
+        background: #F1F3F2;
+        border-radius: 20px;
+        padding: 15.5px;
+        overflow: hidden;
+    }
+    .reviews {
+        width: 3600px;
+        left: 0px;
+        box-sizing: border-box;
+        margin: 15px 0 0 0;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        transition: left 1s ease;
+    }
+
+
+}
+@media (max-width: 1400px) {
     .designed {
         padding-right: 1%;
         margin-left: auto;
+    }
+    .slider{
+        width: 100%;
+        left: -101%;
+      }
+      .slider-down {
+        width: 100%;
+        left: -101%;
+      }
+      @keyframes move-right {
+        from {left: -1180px;}
+        to {left: -1940px;}
+      }
+      @keyframes move-left {
+        from {left: -1180px;}
+        to {left: 0px;}
     }
     .arrow_left {
         display: none;
@@ -50,10 +133,10 @@
         display: none;
     }
     .carton_animal_top>div {
-        margin: 0 15px;
+        margin: 0 20px;
     }
     .carton_animal_down>div {
-        margin: 0 auto;
+        margin: 0 20px;
     }
     .little_screen_arrows {
         margin: 15px 172px;
@@ -164,25 +247,18 @@
         color: #333B41;
     }
     /*---------------------------about-animal-------------------------------*/
-    .animal_wrapper {
-        width: 292px;
-        height: 352px;
+    .carton_animal_top>div {
+        margin: 0 15px;
     }
-    .text_card {
-        margin-top: -2px
+    .carton_animal_down>div {
+        margin: 0 15px;
     }
-    .section_about_animal {
-        margin-top: 140px;
-    }
-    .panda_card_text {
-        margin: -1px 0 0 2px;
-    }
-    .animal_big_screen {
-        display: none;
-    }
-    .animal_little_screen {
-        display: flex;
-    }
+    .slider{
+        margin: 0 0 0 40px;
+      }
+      .slider-down {
+        margin: 0 0 0 40px;
+      }
     .section_about_animal::before {
         content: "";
         position: absolute;
@@ -273,15 +349,8 @@
     .reviews_about_us_container {
         margin-top: 70px;
     }
-    .reviews_block_two {
-        display: none;
-    }
-    .reviews {
-        display: flex;
-        flex-direction: row;
-        margin: 3px auto;
-    }
-    .reviews_block_one {
+
+    /* .reviews_block_one {
         display: none;
     }
     .reviews_block_two {
@@ -292,7 +361,7 @@
     }
     .reviews_block_four {
         display: none;
-    }
+    } */
     .all_block_header {
         margin: -3px 0 0 -2px;
     }
@@ -309,7 +378,7 @@
     .reviews_block_four_little {
         padding: 0;
     }
-    .all_block_little {
+    /* .all_block_little {
         display: flex;
         flex-direction: column;
         margin: 0 0 0 3.2%;
@@ -320,7 +389,7 @@
         border-radius: 20px;
         padding: 15.5px;
         overflow: hidden;
-    }
+    } */
     .slider_bar {
         margin: 9px 0 0 0;
     }
@@ -379,8 +448,134 @@
         margin: 0 27px 51px 0;
     }
 }
+@media (max-width:998px) {
+    .carton_animal_top>div {
+        margin: 0 15px;
+    }
+    .carton_animal_down>div {
+        margin: 0 15px;
+    }
+    .wrappers {
+        margin: 0 auto;
+        width: 620px;
+        overflow: hidden;
+        position: relative;
+    }
+    .slider{
+        left: -160%;
+      }
+      .slider-down {
+        left: -109%;
+      }
+      @keyframes move-right {
+        from {left:-80%;}
+        to {left: -160%;}
+      }
+      @keyframes move-left {
+        from {left: -80%;}
+        to {left: 0%;}
+    }
+    .section_about_animal {
+        margin-top: 37px;
+    }
+    .carton_animal_top>div>div>div>img {
+        height: 285px;
+        width: 285px;
+    }
+    .carton_animal_down>div>div>div>img {
+        height: 285px;
+        width: 285px;
+    }
+    .banana_meat_img img {
+        width: 80%;
+        margin: 4px 0 0 2px;
+     }
+     .animal_h {
+        margin: 8px 0 0px 12px;
+        letter-spacing: 0.1px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    .animal_text {
+        letter-spacing: -0.2px;
+        margin: 0 0 0 12px;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 120%;
+    }
+    .animal_wrapper {
+        position: relative;
+        width: 285px;
+        height: 330px;
+    }
+    .little_screen_arrows {
+        margin: 12px 30% 17px 30%;
+    }
+    .Alligator_text {
+        display: none;
+    }
+    .Alligator_text_small {
+        display: block;
+    }
+    .section_about_animal::before {
+        content: "";
+        position: absolute;
+        width: 202px;
+        height: 201px;
+        left: 0px;
+        bottom: 0px;
+        background-image: url(../../assets/icons/palm_foto_table.svg);
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
+    .section_about_animal::after {
+        content: "";
+        position: absolute;
+        width: 175px;
+        height: 131px;
+        right: 0px;
+        bottom: 0;
+        background-image: url(../../assets/icons/strelitzia_table.svg);
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
+    .animal_cartoon_bottom{
+        display: flex;
+        margin: 62px auto 100px auto;
+        width: 47.4%;
+        height: 54px;
 
+    }
+}
 @media (max-width: 971px) {
+    .slider_bar{
+        display: none;
+    }
+    .reviews {
+        display: none;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .all_block {
+        display: none;
+    }
+    .all_block_little {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 1% 10px 1%;
+        width: 85%;
+        height: 78px;
+        position: relative;
+        background: #F1F3F2;
+        border-radius: 20px;
+        padding: 15.5px;
+        overflow: hidden;
+    }
     .t_one {
         display: none;
     }
@@ -478,8 +673,23 @@
     }
     .autors {
         margin: 0 5px 51px 0;
-
     }
+    .new{
+        font-family: 'Roboto', sans-serif;
+        width: 270px;
+        height: 390px;
+        position: absolute;
+        top: 2%;
+        left: 2.1%;
+      }
+      .popup_reviews {
+        width: 260px;
+        height: 370px;
+        background: #f1f3f2;
+        border-radius: 20px;
+        padding: 10px;
+        margin: 15px;
+      }
 }
 
 @media (max-width: 641px) {
@@ -489,9 +699,79 @@
         z-index: 5;
     }
     .hamburger_menu{
-        margin-left: 81%;
+        margin: 14px 0 0 0%;
         display: block;
+        position: fixed;
+        right: 8%;
+        z-index: 6;
     }
+    @keyframes anim{
+        0%{display:block;}
+        10%{opacity:0;}
+        100%{opacity:1;}
+      }
+    .active{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        color: #000;
+        background-color: #fff;
+        width: 640px;
+        height: 329px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        opacity: 1;
+        transition: all 1s ease;
+    }
+
+    .petStory_online-burger {
+        width: 62px;
+        height: 38px;
+        margin: 8px 0 14px 10px;
+        padding: -2px 0px;
+        border: 1px solid #FE9013;
+    }
+    .petStory_online-burger>h1 {
+        margin: 0px 0px 0 0px;
+        font-weight: 400;
+        font-size: 15.2116px;
+        line-height: 120%;
+        text-align: center;
+        color: #FE9013;
+    }
+    .petStory_online-burger>h1>span {
+        background: url(../../assets/icons/bamboo_orange.svg) no-repeat;
+        background-position: -8px -2px;
+    }
+    .about-burger {
+    }
+    .head_list-burger {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 20px 0 0 10px;
+        padding: 0;
+        gap: 18px;
+    }
+    .head_list-burger:hover {
+        cursor: pointer;
+        color: #FE9013;
+    }
+    .head_list-burger>li>a {
+        color: #000;
+    }
+    .map-burger {
+    }
+    .zoos-burger {
+    }
+    .donate-burger {
+    }
+    .contact-burger {
+    }
+    .designed-burger {
+    }
+
     .hamburger_menu>span,
     .hamburger_menu>span::before,
     .hamburger_menu>span::after {
@@ -500,14 +780,28 @@
         width: 18px;
         height: 1px;
         background-color: #fff;
+        transition: 0.3s;
     }
     .hamburger_menu > span::before {
         content: '';
-        top: -4px;
+        transform: translateY(-5px);
     }
     .hamburger_menu > span::after {
         content: '';
-        top: 4px;
+        transform: translateY(5px);
+    }
+    .hamburger_menu_active > span {
+        height: 0px;
+    }
+    .hamburger_menu_active > span::before {
+        background-color: #000;
+        transform: rotate(45deg);
+        height: 1.5px;
+    }
+    .hamburger_menu_active > span::after {
+        background-color: #000;
+        transform: rotate(-45deg);
+        height: 1.5px;
     }
     .online_button {
         width: 82px;
@@ -531,6 +825,7 @@
     .designed {
         display: none;
     }
+
     /*------------------------------panda 640------------------------*/
     .watch_online {
         z-index: 1;
@@ -718,15 +1013,28 @@
         margin-top: 29px;
     }
     .reviews {
+        display: none;
+        width: 0;
         display: flex;
         flex-direction: column;
+        gap: 15px;
     }
     .all_block {
-        margin: 0 90px 13px 2.9%;
-        width: 90%;
-        height: 83px;
-        padding: 15px 10px 12px 15.5px;
+        display: none;
     }
+    .all_block_little {
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px 15px 20px;
+        width: 85%;
+        height: 78px;
+        position: relative;
+        background: #F1F3F2;
+        border-radius: 20px;
+        padding: 15.5px;
+        overflow: hidden;
+    }
+
     .all_block_name>:nth-child(1) {
         margin: 2px 0 0 8px;
     }
@@ -739,7 +1047,6 @@
     }
     .slider_bar {
         margin: 15px 0 0 0;
-        
     }
     .reviews_table {
         margin: 10px 3px 0 6px;
@@ -752,7 +1059,7 @@
        display: none;
     }
     .reviews_bottom {
-        margin: 25px auto 80px auto;
+        margin: 10px auto 80px auto;
         padding: 16px 8.8%;
     }
     .reviews_about_us_container::after {
@@ -762,6 +1069,14 @@
         z-index: 2;
         content: url(../../assets/images/leav_foto_table.jpg);
     }
+    .new{
+        font-family: 'Roboto', sans-serif;
+        width: 267px;
+        height: 391px;
+        position: absolute;
+        top: 4%;
+        left: -1%;
+      }
     /*-------------------------------------------footer 640------------------------------*/
     .footer_input {
         display: none;
@@ -811,6 +1126,23 @@
 }
 
 @media (max-width:624px) {
+    .last-card{
+        display: block;
+    }
+    .t_one{
+        margin: 10px auto;
+        display: block;
+    }
+    .wrappers{
+        display: none;
+    }
+    .carton_animal{
+        margin: -900px auto 0 auto;
+    }
+    .info_about_animal{
+        display: flex;
+        flex-direction: column;
+    }
     .reviews {
         padding: 0 5px 0 0;
     }
@@ -1195,4 +1527,20 @@
         margin: 20px 0 0 95px;
         font-size: 15px;
     }
+    .popup_reviews {
+        width: 250px;
+        height: 375px;
+        background: #f1f3f2;
+        border-radius: 20px;
+        padding: 0px;
+        margin: 15px;
+      }
+    .new{
+        font-family: 'Roboto', sans-serif;
+        width: 270px;
+        height: 390px;
+        position: absolute;
+        top: 4%;
+        left: 2.1%;
+      }
 }

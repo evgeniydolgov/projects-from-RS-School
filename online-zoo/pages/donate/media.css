@@ -166,9 +166,15 @@
 }
 
 @media (max-width: 800px) {
-    .list {
-        display: none;
-    }
+    .list{
+        margin: 15px 0 0 62px;
+        gap: 15px;
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        color: #FFFFFF;
+        margin-right: auto;
+}
     .footer_input {
         display: none;
     }
@@ -228,12 +234,31 @@
     .autors {
         margin: 40px 0% 0px 0;
     }
+
+
+}
+
+@media (max-width: 641px) {
+    /*-----------------------------------header 640------------------------*/
     .designed {
         display: none
     }
+    .list {
+        display: none;
+    }
+    .head_wrapper {
+        background: black;
+        position: fixed;
+        z-index: 5;
+        margin: 0 auto;
+        padding: 0 22px;
+    }
     .hamburger_menu {
-        margin: 20px 5px 0 auto;
+        margin: 14px 0 0 0%;
         display: block;
+        position: fixed;
+        right: 7%;
+        z-index: 6;
     }
     .hamburger_menu>span,
     .hamburger_menu>span::before,
@@ -252,6 +277,21 @@
         content: '';
         top: 4px;
     }
+    .hamburger_menu_active > span {
+        height: 0px;
+        background-color: #000;
+    }
+    .hamburger_menu_active > span::before {
+        background-color: #000;
+        top: 4px;
+        transform: rotate(-45deg);
+        height: 1.5px;
+    }
+    .hamburger_menu_active > span::after {
+        background-color: #000;
+        transform: rotate(45deg);
+        height: 1.5px;
+    }
     .online_button {
         width: 82px;
         margin: 0;
@@ -264,17 +304,6 @@
         line-height: 120%;
         background: url(../../assets/icons/bamboo_mobile.svg) no-repeat;
         background-position: 18px 11px;
-    }
-}
-
-@media (max-width: 641px) {
-    /*-----------------------------------header 640------------------------*/
-    .head_wrapper {
-        background: black;
-        position: fixed;
-        z-index: 5;
-        margin: 0 auto;
-        padding: 0 22px;
     }
     .head_container {
     }
@@ -289,6 +318,21 @@
         background: url(../../assets/icons/bamboo_mobile.svg) no-repeat;
         background-position: 0px 12px;
     }
+    .active{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        color: #000;
+        background-color: #fff;
+        width: 640px;
+        height: 329px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        opacity: 1;
+        transition: all 1s ease;
+    }
+
     .online_button {
         margin: 3px 0 2px 0;
         width: 40px;
@@ -305,6 +349,41 @@
         background-size: cover;
         background-position: center center;
         height: 335px;
+    }
+    
+    .petStory_online-burger {
+        width: 62px;
+        height: 38px;
+        margin: 8px 0 14px 10px;
+        padding: -2px 0px;
+        border: 1px solid #FE9013;
+    }
+    .petStory_online-burger>h1 {
+        margin: 0px 0px 0 0px;
+        font-weight: 400;
+        font-size: 15.2116px;
+        line-height: 120%;
+        text-align: center;
+        color: #FE9013;
+    }
+    .petStory_online-burger>h1>span {
+        background: url(../../assets/icons/bamboo_orange.svg) no-repeat;
+        background-position: -8px -2px;
+    }
+    .head_list-burger {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 20px 0 0 10px;
+        padding: 0;
+        gap: 18px;
+    }
+    .head_list-burger:hover {
+        cursor: pointer;
+        color: #FE9013;
+    }
+    .head_list-burger>li>a {
+        color: #000;
     }
     /*-------------------------------------------main 640---------------------------*/
     
@@ -604,7 +683,6 @@
     .tick {
         z-index: 2;
         width: 5px;
-        background: #ffee2e;
         height: 5px;
         border-radius: 100%;
     }
