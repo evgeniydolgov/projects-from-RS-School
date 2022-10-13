@@ -1,6 +1,7 @@
 let header_burger = document.querySelector('.hamburger_menu');
 let body = document.querySelector('.back');
 let menuSub = document.querySelector('.menu__sub-list');
+let form = document.querySelector('.form__number')
 
 function burgerClick () {
     header_burger.classList.toggle('hamburger_menu_active');
@@ -133,3 +134,14 @@ let ValuDollars = function(){
     }
 
   })
+
+  function limit()
+{
+    let max_chars = 4;
+
+    if(this.value.length > max_chars) {
+        this.value = this.value.substr(0, max_chars);
+    }
+};
+
+form.addEventListener('input', limit);
