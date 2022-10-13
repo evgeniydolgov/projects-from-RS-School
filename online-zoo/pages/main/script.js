@@ -36,7 +36,8 @@ const moveLeft = () => {
   leftSlideTop.childNodes[5].style.order = Math.floor(Math.random() * 2 - 1);
   leftSlideDown.childNodes[3].style.order = Math.floor(Math.random() * 5 - 1);
   leftSlideDown.childNodes[5].style.order = Math.floor(Math.random() * 5 - 1);
-  buttonLeft.removeEventListener('click',moveLeft)
+  buttonLeft.removeEventListener('click',moveLeft);
+  littleButtonLeft.removeEventListener('click',moveLeft);
 };
 
 const moveRight = () => {
@@ -46,7 +47,8 @@ const moveRight = () => {
   rightSlideTop.childNodes[5].style.order = Math.floor(Math.random() * 2 - 1);
   rightSlideDown.childNodes[3].style.order = Math.floor(Math.random() * 5 - 1);
   rightSlideDown.childNodes[5].style.order = Math.floor(Math.random() * 5 - 1);
-  buttonRight.removeEventListener('click',moveRight)
+  buttonRight.removeEventListener('click',moveRight);
+  littleButtonRight.removeEventListener('click',moveRight);
 };
 
 buttonLeft.addEventListener("click", moveLeft);
@@ -59,6 +61,8 @@ littleButtonLeft.addEventListener("click", moveLeft);
 slider.addEventListener("animationend", function(animationEvent) {
     buttonLeft.addEventListener("click", moveLeft);
     buttonRight.addEventListener("click", moveRight);
+    littleButtonRight.addEventListener("click", moveRight);
+    littleButtonLeft.addEventListener("click", moveLeft);
     const leftContent = document.querySelector(".prev-top").innerHTML;
     const centerContent = document.querySelector(".center-top").innerHTML;
     const rightContent = document.querySelector(".last-top").innerHTML;
