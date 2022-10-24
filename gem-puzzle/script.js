@@ -153,8 +153,17 @@ createdTiles (countTiles);
         tile.style.color = 'white';
         tile.draggable = 'true'
         gameField.append(tile);
-    }}
-let tiles;
+    
+        }
+    }
+        
+
+
+        
+
+
+    let tiles;
+
 
 
     function createdField(gameSize,sizeTiles){
@@ -183,6 +192,7 @@ function changes (screen) {
     }
 }
 /*----------------------------------------------------------------расположение-------------------------------*/
+
 
 let arr = [];
 let num = 0;
@@ -216,38 +226,82 @@ function setTilesPosition (matrix){
 }
 
 
-const falseTiles = matrix[matrix.length-1][matrix.length-1] //исчезающая плитка
-    falseTiles.style.display = 'none';
+let falseTiles = matrix[matrix.length-1][matrix.length-1] //исчезающая плитка
+    falseTiles.style.opacity = '0';
+    falseTiles.style.pointerEvents = 'none';
 
+    let dragItem = null;
+    for(elem of tiles){
+        if (elem !== tiles[tiles.length-1]){
+        elem.addEventListener('dragstart', (evt)=>{
+            dragItem = evt.target
+            console.log(dragItem);
+            falseTiles.style.pointerEvents = 'auto';
+        })
+        elem .addEventListener(`dragend`, (evt) => {
+            dragItem = null
+            console.log(dragItem);
+            falseTiles.style.pointerEvents = 'none';
+          });
 
+        }else{
+            falseTiles .addEventListener(`dragenter`, (evt) => {
+                evt.preventDefault();
+                evt.target.classList.add(`drop_zone`);
+            })
+            falseTiles .addEventListener(`dragleave`, (evt) => {
+                evt.target.classList.remove(`drop_zone`);
+            })
+            falseTiles .addEventListener(`dragover`, (evt) => {
+                evt.preventDefault();
+                evt.target.classList.remove(`drop_zone`);
+            })
+            falseTiles .addEventListener(`drop`, (evt) => {
+                const tailLocation = findTaikLocation(dragItem, matrix);
+                const falseLocation = findTaikLocation(falseTiles, matrix);
+                const coordinateDifference = findCoordinateDifference (tailLocation,falseLocation);
+                findCoordinateDifference(falseLocation, falseLocation)
+                if (coordinateDifference) {                      //счетчик
+                    steps++;
+                    movies.innerText = `Steps: ${steps}`
+                }
+                if (coordinateDifference === true) {
+                    
+                    movementTile(falseLocation,tailLocation,matrix);
+                    setTilesPosition (matrix);
+                }
+                evt.target.classList.remove(`drop_zone`);
+            })
+            
+    }}
+    
  /*------------------------------------------------------------------------перемещение-плиток------------------------------*/
 let steps = 0; 
 let arrOfNumber = [];
 tiles.forEach(el => {
-    el.addEventListener('click', function(){
-        const tailLocation = findTaikLocation(el, matrix);
-        const falseLocation = findTaikLocation(falseTiles, matrix);
-        const coordinateDifference = findCoordinateDifference (tailLocation,falseLocation);
-        console.log(tailLocation);
+    el.addEventListener('click',letMovieFn )
+})
 
-       
-
-
-        if (coordinateDifference) {                      //счетчик
-            steps++;
-            movies.innerText = `Steps: ${steps}`
-        }
-        if (coordinateDifference === true) {
-            movementTile(falseLocation,tailLocation,matrix);
-            setTilesPosition (matrix);
-        }
-        arrOfNumber = matrix.map((e) => {
-            return e.map((elem) => {
-                return elem.innerText;
-            })
+function letMovieFn(){
+    const tailLocation = findTaikLocation(this, matrix);
+    const falseLocation = findTaikLocation(falseTiles, matrix);
+    const coordinateDifference = findCoordinateDifference (tailLocation,falseLocation);
+    
+    if (coordinateDifference) {                      //счетчик
+        steps++;
+        movies.innerText = `Steps: ${steps}`
+    }
+    if (coordinateDifference === true) {
+        
+        movementTile(falseLocation,tailLocation,matrix);
+        setTilesPosition (matrix);
+    }
+    arrOfNumber = matrix.map((e) => {
+        return e.map((elem) => {
+            return elem.innerText;
         })
     })
-})
+}
 
 function findTaikLocation(element, matrix){ //отоброжаем координаты эдемента
     for (let y = 0; y < matrix.length; y++) {
