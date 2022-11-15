@@ -1,0 +1,125 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    font-family: $Gothic;
+    height: 100vh;
+
+    margin: 0 auto;
+    user-select: none;
+    background: url(./img/two_showds.jpg)50% 0/cover no-repeat;
+}
+
+.game-logo__text {
+    margin: 20px;
+    font-size: $fonts;
+    font-weight: 500;
+    line-height: 40px;
+    color: #c0c0c0;
+    text-shadow: #FC0 1px 0 15px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .choice__text {
+        margin: 0 auto;
+        padding: 0;
+        line-height: 120px;
+        font-size: calc($fonts - 30px);
+        font-weight: 400;
+
+        &:hover {
+            text-shadow: #FC0 1px 0 15px;
+            cursor: pointer;
+        }
+    }
+}
+
+.choice__list,
+.message {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    background: url(./img/old_paper.jpg);
+    border: 8px solid #302113;
+}
+
+.footer-list {
+    position: relative;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+    font-size: calc($fonts/3);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    color: aliceblue;
+
+    .footer-list__rs {
+
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+
+    }
+
+    .footer-list__githab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+
+        img {
+            width: 32px;
+        }
+
+        .footer-list__lang {
+            font-weight: bolder;
+            margin-right: 5vw;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 880px) {
+
+    .game-logo__text {
+        font-size: calc($fonts - 20px);
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .game-logo__text {
+        font-size: calc($fonts - 40px);
+        display: inline;
+    }
+
+    .footer-list {
+        font-size: calc($fonts/5);
+    }
+
+    .choice {
+
+        .choice__text {
+            line-height: 70px;
+            font-size: calc($fonts - 50px);
+        }
+    }
+}
