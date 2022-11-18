@@ -39,8 +39,6 @@
         width: 6px;
     }
 
-
-
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background: linear-gradient(180deg, #c0c0c0, #c0c0c0);
@@ -273,6 +271,13 @@
 }
 
 @media (max-width: 600px) {
+    .charters__wrapper-fot {
+        width: 100%;
+    }
+
+    .charters__wrapper {
+        width: 100%;
+    }
 
     .pop-up__paper {
         display: flex;
@@ -304,5 +309,15 @@
         top: 1.5vh;
         right: 3vw;
         font-size: calc($fonts/5);
+    }
+
+    .exit {
+        margin: 0;
+        position: absolute;
+        top: 2vh;
+        right: 2vw;
+        font-size: calc($fonts/3);
+        font-weight: 300;
+        line-height: 0px;
     }
 }

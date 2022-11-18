@@ -1,0 +1,382 @@
+.wrapper__game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: -10000px;
+    transition: transform 1s ease-in-out;
+    background: url(./img/ciri.webp) 50% 0/cover no-repeat;
+}
+
+.wrapper__game.start-right {
+    transform: translateX(10000px);
+}
+
+.game__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(66, 64, 48, 0.5);
+    width: 72%;
+    height: 700px;
+}
+
+.game__contant {
+    background: url(./img/old_paper.jpg)50% 0/cover no-repeat;
+
+    width: 99%;
+    height: 99%;
+}
+
+.game__header {
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    text-shadow: rgb(234, 255, 0) 1px 0 15px;
+}
+
+.game__logo {
+    margin: 20px 0 0 2%;
+    padding: 0;
+}
+
+.game__counter {
+    margin: 20px 1% 0 0;
+}
+
+.fraction__list {
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    justify-content: space-around;
+    list-style-type: none;
+    color: #6f4d4d;
+    border-bottom: 2px solid #000000;
+    text-shadow: rgb(0, 0, 0) 1px 0 15px;
+}
+
+.select__fraction {
+    color: rgb(0, 0, 0);
+    text-shadow: rgb(234, 255, 0) 1px 0 15px;
+}
+
+.question {
+    margin-top: 0px;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: space-evenly;
+    border-color: #a17d2bb3;
+    border-width: 10px;
+    border-style: groove;
+}
+
+.question__image {
+    position: relative;
+    margin: 5px 0;
+    height: 200px;
+    background: url(https://gwent.one/image/card/low/assets/border-gold.png) 0 0/100% 100% no-repeat;
+    z-index: 2;
+}
+
+.persona-img {
+    width: 140px;
+    height: 200px;
+}
+
+.gold-shirt {
+    position: absolute;
+    height: 200px;
+    width: 140px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.shirt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 140px;
+    height: 200px;
+    z-index: 1;
+}
+
+.shirt-black {
+    background: url(./img/shirt-wolf.webp) 50% 0/cover no-repeat;
+}
+
+.question__name {
+    margin-top: 10px;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.questin__audio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.characters {
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-color: #a17d2bb3;
+    border-width: 10px;
+    border-style: groove;
+    border-top: none;
+}
+
+.characters__list {
+    margin: 0 1% 0 35px;
+    padding: 0;
+    list-style-type: none;
+
+    .characters__list-name {
+        font-size: 24px;
+        margin: 5px auto;
+        position: relative;
+        cursor: pointer;
+        border-bottom: 1px solid #000;
+
+        &:hover {
+            text-shadow: rgb(255, 255, 1) 1px 0 15px;
+        }
+    }
+
+    .standart::before {
+        content: "";
+        position: absolute;
+        background-image: url('https://gwent.one/image/icon/faction/hc/Northern Realms.png');
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 0px;
+        left: -35px;
+    }
+
+    .error {
+        text-decoration: line-through;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url(./img/red-scull.webp);
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 0px;
+            left: -35px;
+        }
+    }
+
+    .right {
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url(./img/wolf.webp);
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 0px;
+            left: -35px;
+        }
+    }
+
+}
+
+.game__footer {
+    margin-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.info__container {
+    display: flex;
+}
+
+.characters__info {
+    line-height: 35px;
+    font-size: 24px;
+    height: 250px;
+    width: 40vw;
+    overflow-y: auto;
+    box-shadow: 1px 1px 15px 5px rgba(92, 93, 61, 0.798);
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: linear-gradient(180deg, #000000, #a17d2bb3);
+    }
+}
+
+.info__name {
+    font-size: 22px;
+}
+
+.info__description {
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.info__block-up {
+    margin-right: 8%;
+}
+
+.info__image {
+    height: 120px;
+    border-radius: 5%;
+}
+
+.button-floor {
+    margin-bottom: 0px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 32px;
+    line-height: 24px;
+    color: #6f4d4d84;
+    text-shadow: rgb(0, 0, 0) 1px 0 15px;
+}
+
+.game__footer-back {
+    border-bottom: 2px solid #000000;
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+        text-shadow: rgb(234, 255, 0) 1px 0 15px;
+    }
+}
+
+.onwork {
+    border-bottom: 2px solid #000000;
+    color: #000;
+    cursor: pointer;
+
+    &:hover {
+        text-shadow: rgb(234, 255, 0) 1px 0 15px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .game__logo {
+        margin: 0 0 0 2%;
+        padding: 0;
+    }
+
+    .game__counter {
+        margin: 0 1% 0 0;
+    }
+}
+
+@media (max-width: 920px) {
+    .characters {
+        justify-content: space-evenly;
+        border-color: #a17d2bb3;
+        border-width: 10px;
+        border-style: groove;
+        border-top: none;
+    }
+}
+
+@media (max-width:860px) {
+
+    .characters__info {
+        line-height: 35px;
+        font-size: 24px;
+        height: 250px;
+        width: 93%;
+        overflow-y: auto;
+        box-shadow: 1px 1px 15px 5px rgba(92, 93, 61, 0.798);
+    }
+
+
+    .characters__list {
+        margin: 0 2% 0 35px;
+
+        .characters__list-name {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width:670px) {
+
+    .game__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(66, 64, 48, 0.5);
+        width: 90%;
+        height: 700px;
+    }
+
+}
+
+@media (max-width: 510px) {
+
+    .game__logo {
+        font-size: 22px;
+        padding: 0;
+    }
+
+
+    .game__counter {
+        font-size: 22px;
+        padding: 0;
+    }
+
+    .fraction__list {
+        padding: 0;
+        margin: 3px;
+        gap: 1%;
+        font-size: 20px;
+    }
+
+    .characters__info {
+        line-height: 35px;
+        width: 93%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 475px) {
+
+    .game__container {
+        width: 100%;
+        height: 700px;
+    }
+
+    .info__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .characters__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 300px;
+    }
+
+    .characters {
+        height: 300px;
+    }
+}

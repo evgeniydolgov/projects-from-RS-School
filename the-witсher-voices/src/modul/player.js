@@ -1,14 +1,22 @@
-export default function CreatedAudioPlayer(duratuon, audio) {
+function CreatedAudioPlayer(duratuon, audio, lang) {
 
     const playerContainer = document.createElement('div');
     playerContainer.classList.add('player-container')
     duratuon.append(playerContainer);
 
     const audioVoice = document.createElement('audio');
-    audioVoice.classList.add('audio-voice')
-    audioVoice.src = `${audio}`;
-    playerContainer.append(audioVoice);
+    audioVoice.classList.add('audio-voice');
+    let songru = audio.replace('/en/', '/ru/');
+    if (lang === 'en') {
+        audioVoice.src = `${audio}`;
+    } else if (lang === 'ru') {
+        audioVoice.src = `${songru}`;
+    }
 
+    if (localStorage.getItem('volume')) {
+        audioVoice.volume = +localStorage.getItem('volume') / 100;
+    }
+    playerContainer.append(audioVoice);
     const playBtn = document.createElement('div');
     playBtn.classList.add('play')
     playerContainer.append(playBtn);
@@ -52,6 +60,9 @@ export default function CreatedAudioPlayer(duratuon, audio) {
 
     const volumeBtn = document.createElement('input');
     volumeBtn.type = 'range';
+    if (localStorage.getItem('volume')) {
+        volumeBtn.value = localStorage.getItem('volume')
+    }
     volumeBtn.classList.add('volume');
     volumeContainer.append(volumeBtn);
 
@@ -72,8 +83,8 @@ export default function CreatedAudioPlayer(duratuon, audio) {
     progressRange.onclick = audioJump
 
     function audioVolume() {
-        let v = this.value;
-        audioVoice.volume = v / 100;
+        localStorage.setItem('volume', this.value)
+        audioVoice.volume = localStorage.getItem('volume') / 100;
     }
 
     function progressUpdate() {
@@ -97,3 +108,4 @@ export default function CreatedAudioPlayer(duratuon, audio) {
         audioVoice.play();
     }
 }
+export default CreatedAudioPlayer;

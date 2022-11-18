@@ -365,5 +365,8 @@ const chartersData = [[
         video: "https://gwent.one/video/card/loop/ob/132208.webm"
     }
 ]];
+const arrFractions = ['neutral', 'northerners', 'scoiatael', 'skellige', 'nilfgaard', 'monster', 'нейтралы', 'северяне', "скоя'таэли", 'скеллиге', "нильфгаард", "монстры"];
 
-export default chartersData;
+export { chartersData, arrFractions };
+
+

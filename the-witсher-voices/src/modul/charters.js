@@ -1,5 +1,6 @@
-import chartersData from './all_charters_link';
+import { chartersData, arrFractions } from './all_charters_link';
 import CreatedAudioPlayer from './player';
+import { langBtn } from './start_page'
 
 const page = document.querySelector('.wrapper');
 const chartersLink = document.querySelector('.choice__charters');
@@ -11,6 +12,13 @@ const aboutPerson = document.querySelector('.about-person');
 
 chartersLink.addEventListener('click', () => {
     chartersPage.classList.toggle('about-top');
+})
+langBtn.addEventListener('click', () => {
+    blackBackground.innerHTML = '';
+    createdGallery(localStorage.getItem('lang'));
+    popUp.classList.remove('click-on-pickter');
+    videoBlock.innerHTML = '';
+    aboutPerson.innerHTML = '';
 })
 
 const chartersPage = document.createElement('section');
@@ -26,91 +34,98 @@ const blackBackgroundFooter = document.createElement('div');
 blackBackgroundFooter.classList.add('charters__wrapper-fot');
 chartersPage.append(blackBackgroundFooter);
 
-chartersPage.addEventListener('click', (el) => {
-    const missClick = el.composedPath().includes(blackBackground);
-    if (!missClick) {
+function createdGallery(lang) {
+    chartersPage.addEventListener('click', (el) => {
+        const missClick = el.composedPath().includes(blackBackground);
+        if (!missClick) {
+            chartersPage.classList.toggle('about-top');
+        }
+    })
+
+    const exitPage = document.createElement('div');
+    exitPage.classList.add('exit');
+    exitPage.textContent = 'X';
+    blackBackground.append(exitPage);
+
+
+    exitPage.addEventListener('click', () => {
         chartersPage.classList.toggle('about-top');
+    })
+
+    const chartersTitle = document.createElement('h2');
+    chartersTitle.classList.add('game-logo__text');
+    if (lang === 'en') {
+        chartersTitle.textContent = 'Charters';
+    } else {
+        chartersTitle.textContent = 'Персонажи';
     }
-})
+    blackBackground.append(chartersTitle);
 
-const exitPage = document.createElement('div');
-exitPage.classList.add('exit');
-exitPage.textContent = 'X';
-blackBackground.append(exitPage);
+    function cardMix(params, language) {
+        params.forEach((element, index) => {
 
+            const blockImg = document.createElement('div');
+            blockImg.classList.add('charters__block');
+            blackBackground.append(blockImg);
 
-exitPage.addEventListener('click', () => {
-    chartersPage.classList.toggle('about-top');
-})
+            const miniTitle = document.createElement('h3');
+            miniTitle.classList.add('charters__tittle');
+            if (lang === 'en') {
+                miniTitle.textContent = arrFractions[index];
+            } else {
+                miniTitle.textContent = arrFractions[index + 6];
+            }
 
-const chartersTitle = document.createElement('h2');
-chartersTitle.classList.add('game-logo__text');
-chartersTitle.textContent = 'Charters'
-blackBackground.append(chartersTitle);
+            blockImg.append(miniTitle);
 
-// const neutral = document.createElement('h3');
-// neutral.classList.add('charters__neutral-tittle');
-// neutral.textContent = 'neutral';
-// blackBackground.append(neutral);
+            element.forEach(persona => {
+                if (language === 'en') {
+                    creatingShirt(blockImg, persona.image, persona.nameen, persona.id, persona.video)
+                } else {
+                    creatingShirt(blockImg, persona.image, persona.nameru, persona.id, persona.video)
+                }
 
-// const geraltCard = document.createElement("img");
-// geraltCard.classList.add('geralt-card')
-// geraltCard.src = "https://gwent.one/image/card/low/assets/border-gold.png";
-// blackBackground.append(geraltCard);
-
-const arrFractions = ['neutral', 'northerners', 'scoiatael', 'skellige', 'nilfgaard', 'monster']
-
-function cardMix(params) {
-    params.forEach((element, index) => {
-
-        const blockImg = document.createElement('div');
-        blockImg.classList.add('charters__block');
-        blackBackground.append(blockImg);
-
-        const miniTitle = document.createElement('h3');
-        miniTitle.classList.add('charters__tittle');
-        miniTitle.textContent = arrFractions[index];
-        blockImg.append(miniTitle);
-
-        element.forEach(persona => {
-            creatingShirt(blockImg, persona.image, persona.nameen, persona.id, persona.video)
-        })
-    });
-}
-
-cardMix(chartersData)
-function creatingShirt(params, imgCharter, nameCharter, id, video) {
-    const card = document.createElement("div");
-    card.classList.add('block-for-cards');
-    params.append(card);
-
-    const cardText = document.createElement("div");
-    cardText.classList.add('cards-text');
-    cardText.textContent = nameCharter;
-    card.append(cardText);
-
-    const shirtCard = document.createElement("img");
-    shirtCard.classList.add('all-cards-image');
-    shirtCard.src = "https://gwent.one/image/card/low/assets/border-gold.png";
-    shirtCard.style.backgroundImage = `url(${imgCharter})`;
-    shirtCard.setAttribute('id', `${id}`)
-    card.append(shirtCard);
-
-    const videoCard = document.createElement("video");
-    videoCard.classList.add('video-image');
-    videoCard.src = `${video}`;
-    videoCard.pause();
-    card.append(videoCard);
-
-    shirtCard.onmouseover = function () {
-        videoCard.style.opacity = '1';
-        shirtCard.style.backgroundImage = '';
-        videoCard.play();
+            })
+        });
     }
-    shirtCard.onmouseout = function () {
-        videoCard.style.opacity = '0';
+
+    cardMix(chartersData, localStorage.getItem('lang'))
+
+
+    function creatingShirt(params, imgCharter, nameCharter, id, video) {
+        const card = document.createElement("div");
+        card.classList.add('block-for-cards');
+        params.append(card);
+
+        const cardText = document.createElement("div");
+        cardText.classList.add('cards-text');
+        cardText.textContent = nameCharter;
+        card.append(cardText);
+
+        const shirtCard = document.createElement("img");
+        shirtCard.classList.add('all-cards-image');
+        shirtCard.src = "https://gwent.one/image/card/low/assets/border-gold.png";
         shirtCard.style.backgroundImage = `url(${imgCharter})`;
+        shirtCard.setAttribute('id', `${id}`)
+        card.append(shirtCard);
+
+        const videoCard = document.createElement("video");
+        videoCard.classList.add('video-image');
+        videoCard.src = `${video}`;
         videoCard.pause();
+        card.append(videoCard);
+
+        shirtCard.onmouseover = function () {
+            videoCard.style.opacity = '1';
+            shirtCard.style.backgroundImage = '';
+            videoCard.play();
+        }
+        shirtCard.onmouseout = function () {
+            videoCard.style.opacity = '0';
+            shirtCard.style.backgroundImage = `url(${imgCharter})`;
+            videoCard.pause();
+        }
+        return cardText
     }
 }
 
@@ -122,11 +137,9 @@ popUp.addEventListener('click', (el) => {
     }
 })
 
-let audio = document.querySelector('#audio-player');
-let progress = document.querySelector('progress')
-let out = document.querySelector('#out');
+blackBackground.addEventListener('click', createdPopUpOnLang)
 
-blackBackground.addEventListener('click', (el) => {
+function createdPopUpOnLang(el) {
     const foundId = el.target.id;
     if (el.target.className === 'all-cards-image') {
         popUp.classList.add('click-on-pickter');
@@ -134,17 +147,22 @@ blackBackground.addEventListener('click', (el) => {
             element.forEach(person => {
                 if (person.id === Number(foundId)) {
                     bigVideoPlay(person.video, person.image);
-                    bigName(person.nameen);
-                    CreatedAudioPlayer(aboutPerson, person.audio)
-                    bigDescriptionPerson(person.descriptionen);
-                    exitPopUp();
+                    if (localStorage.getItem('lang') === 'en') {
+                        bigName(person.nameen);
+                        CreatedAudioPlayer(aboutPerson, person.audio, localStorage.getItem('lang'))
+                        bigDescriptionPerson(person.descriptionen);
+                    } else {
+                        bigName(person.nameru);
+                        CreatedAudioPlayer(aboutPerson, person.audio, localStorage.getItem('lang'))
+                        bigDescriptionPerson(person.descriptionru);
+                    }
 
+                    exitPopUp();
                 }
             })
         });
     };
-})
-
+}
 
 function bigVideoPlay(video, image) {
     const bigVideo = document.createElement('video');
@@ -156,19 +174,11 @@ function bigVideoPlay(video, image) {
     videoBlock.append(bigVideo);
 }
 
-function bigName(name) {
-    const bigName = document.createElement('h3');
-    bigName.classList.add('big-name');
-    bigName.textContent = `${name}`;
-    aboutPerson.append(bigName);
-}
-
-function bigVoicePlayer(audio) {
-    const bigVoice = document.createElement('audio');
-    bigVoice.classList.add('big-voice');
-    bigVoice.src = `${audio}`;
-    bigVoice.controls = 'true'
-    aboutPerson.append(bigVoice);
+function bigName(name, id) {
+    const bigNames = document.createElement('h3');
+    bigNames.classList.add('big-name');
+    bigNames.textContent = `${name}`;
+    aboutPerson.append(bigNames);
 }
 
 function bigDescriptionPerson(descrip) {
@@ -190,8 +200,4 @@ function exitPopUp() {
     })
 }
 
-
-
-
-
-
+createdGallery(localStorage.getItem('lang'));
