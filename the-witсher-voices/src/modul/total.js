@@ -17,7 +17,7 @@ langBtn.addEventListener('click', () => {
 function callTotalPage() {
     totalPage.classList.add('total-choice');
 }
-function createdTotal(language) {
+function createdTotal(language = localStorage.getItem('lang')) {
 
     totalPage.innerHTML = '';
     if (!localStorage.getItem('count')) {
