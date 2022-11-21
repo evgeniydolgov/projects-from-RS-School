@@ -140,6 +140,9 @@ popUp.addEventListener('click', (el) => {
 blackBackground.addEventListener('click', createdPopUpOnLang)
 
 function createdPopUpOnLang(el) {
+    if (new Date().getTime() - this.lastClick < 1000)
+        return;
+    this.lastClick = new Date().getTime();
     const foundId = el.target.id;
     if (el.target.className === 'all-cards-image') {
         popUp.classList.add('click-on-pickter');
