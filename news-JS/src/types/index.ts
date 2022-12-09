@@ -18,4 +18,14 @@ interface NewsBlock {
     url: string;
 }
 
-export { Data, NewsBlock };
+interface SourseInterface {
+    category: string;
+    country: string;
+    description: string;
+    id: string;
+    language: string;
+    name: string;
+    url: string;
+}
+
+export { Data, NewsBlock, SourseInterface };
