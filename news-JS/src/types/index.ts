@@ -1,13 +1,3 @@
-interface Data {
-    id: string;
-    name: string;
-    description: string;
-    url: string;
-    category: string;
-    language: string;
-    country: string;
-}
-
 interface NewsBlock {
     urlToImage: string;
     author: string;
@@ -28,4 +18,11 @@ interface SourseInterface {
     url: string;
 }
 
-export { Data, NewsBlock, SourseInterface };
+interface ViewInterface {
+    status: string;
+    sources: SourseInterface[];
+    totalResults?: number;
+    articles?: NewsBlock[];
+}
+
+export { NewsBlock, SourseInterface, ViewInterface };
