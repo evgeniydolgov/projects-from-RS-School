@@ -1,4 +1,4 @@
-export interface Data {
+interface Data {
     id: string;
     name: string;
     description: string;
@@ -7,3 +7,15 @@ export interface Data {
     language: string;
     country: string;
 }
+
+interface NewsBlock {
+    urlToImage: string;
+    author: string;
+    source: { name: string };
+    publishedAt: string;
+    title: string;
+    description: string;
+    url: string;
+}
+
+export { Data, NewsBlock };
