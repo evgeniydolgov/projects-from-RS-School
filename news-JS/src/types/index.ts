@@ -21,7 +21,7 @@ interface SourseInterface {
 type ViewInterface = {
     status: string;
     sources: SourseInterface[];
-    totalResults?: number;
+    totalResults?: number | string;
     articles?: NewsBlock[];
 };
 
