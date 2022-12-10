@@ -18,11 +18,21 @@ interface SourseInterface {
     url: string;
 }
 
-interface ViewInterface {
+type ViewInterface = {
     status: string;
     sources: SourseInterface[];
     totalResults?: number;
     articles?: NewsBlock[];
+};
+
+interface Links {
+    [key: string]: string;
 }
 
-export { NewsBlock, SourseInterface, ViewInterface };
+enum ErrorsNumbers {
+    ok = 200,
+    Unauthorized = 401,
+    NotFound = 404,
+}
+
+export { NewsBlock, SourseInterface, ViewInterface, Links, ErrorsNumbers };

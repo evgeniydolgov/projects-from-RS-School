@@ -11,7 +11,6 @@ export class AppView {
     }
 
     drawNews(data: ViewInterface): void {
-        console.log(data);
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
