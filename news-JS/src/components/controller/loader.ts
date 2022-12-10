@@ -1,16 +1,16 @@
-import { Links, ErrorsNumbers } from '../../types/index';
+import { Links, ErrorsNumbers, Generic } from '../../types/index';
 
 class Loader {
-    baseLink: string;
-    options: object;
+    private baseLink: string;
+    private options: object;
     constructor(baseLink: string, options: object) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
-    getResp(
+    getResp<Date>(
         { endpoint, options = {} }: { endpoint: string; options?: object },
-        callback = (): void => {
+        callback: Generic<Date> = () => {
             console.error('No callback for GET response');
         }
     ): void {
@@ -28,7 +28,7 @@ class Loader {
 
     makeUrl(options: object, endpoint: string): string {
         const urlOptions: Links = { ...this.options, ...options };
-        let url = `${this.baseLink}${endpoint}?`;
+        let url: string = <string>`${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key): void => {
             url += `${key}=${urlOptions[key]}&`;
@@ -36,12 +36,12 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: <T>(a: T) => void, options: object = {}) {
+    load<Date>(method: string, endpoint: string, callback: Generic<Date>, options: object = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data: string) => callback(data))
-            .catch((err: string) => console.error(err));
+            .then((data) => callback(data))
+            .catch((err) => console.error(err));
     }
 }
 

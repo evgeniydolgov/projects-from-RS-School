@@ -3,11 +3,11 @@ import { SourseInterface } from '../../../types/index';
 
 class Sources {
     draw(data: SourseInterface[]) {
-        const fragment = document.createDocumentFragment() as DocumentFragment;
-        const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
+        const fragment: DocumentFragment = document.createDocumentFragment() as DocumentFragment;
+        const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
-        data.forEach((item) => {
-            const sourceClone = <HTMLElement>sourceItemTemp.content.cloneNode(true);
+        data.forEach((item: SourseInterface) => {
+            const sourceClone: HTMLElement = <HTMLElement>sourceItemTemp.content.cloneNode(true);
 
             (<HTMLElement>sourceClone.querySelector('.source__item-name')).textContent = item.name;
             (<HTMLElement>sourceClone.querySelector('.source__item')).setAttribute('data-source-id', item.id);

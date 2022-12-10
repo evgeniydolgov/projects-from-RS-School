@@ -1,6 +1,6 @@
 import News from './news/news';
 import Sources from './sources/sources';
-import { ViewInterface } from '../../types/index';
+import { ViewInterface, NewsBlock, SourseInterface } from '../../types/index';
 
 export class AppView {
     news: News;
@@ -11,12 +11,12 @@ export class AppView {
     }
 
     drawNews(data: ViewInterface): void {
-        const values = data?.articles ? data?.articles : [];
+        const values: NewsBlock[] = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
     drawSources(data: ViewInterface): void {
-        const values = data?.sources ? data?.sources : [];
+        const values: SourseInterface[] = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
 }

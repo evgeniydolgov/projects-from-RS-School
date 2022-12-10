@@ -3,13 +3,13 @@ import { NewsBlock } from '../../../types/index';
 
 class News {
     draw(data: NewsBlock[]): void {
-        const news = data.length >= 10 ? data.filter((_item: NewsBlock, idx: number) => idx < 10) : data;
+        const news: NewsBlock[] = data.length >= 10 ? data.filter((_item: NewsBlock, idx: number) => idx < 10) : data;
 
-        const fragment = <DocumentFragment>document.createDocumentFragment();
-        const newsItemTemp = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
+        const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
+        const newsItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
 
         news.forEach((item: NewsBlock, idx: number) => {
-            const newsClone = <HTMLElement>newsItemTemp.content.cloneNode(true);
+            const newsClone: HTMLElement = <HTMLElement>newsItemTemp.content.cloneNode(true);
 
             if (idx % 2) (<HTMLElement>newsClone.querySelector('.news__item')).classList.add('alt');
 
