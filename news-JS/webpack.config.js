@@ -45,14 +45,14 @@ const baseConfig = {
                 ],
                 type: 'asset/resource',
                 generator: {
-                    filename: 'src/img/[name][ext]',
+                    filename: 'img/[name][ext]',
                 },
             },
             {
                 test: /.(svg|ico)/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'src/img/[name][ext]',
+                    filename: 'img/[name][ext]',
                 },
             },
         ],
