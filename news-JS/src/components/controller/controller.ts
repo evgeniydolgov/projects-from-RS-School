@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: Generic<ViewInterface>): void {
+    getNews(e: Readonly<Event>, callback: Generic<ViewInterface>): void {
         let target: HTMLElement = <HTMLElement>e.target;
         const newsContainer: HTMLElement = <HTMLElement>e.currentTarget;
 

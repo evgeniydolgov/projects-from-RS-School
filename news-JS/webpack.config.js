@@ -6,8 +6,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-    entry: path.resolve(__dirname, 'src/index'),
-    mode: 'development',
     module: {
         rules: [
             {
@@ -17,6 +15,45 @@ const baseConfig = {
             {
                 test: /\.ts$/i,
                 use: 'ts-loader',
+            },
+            {
+                test: /.(jpe?g|png|webp|gif)/i,
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: false,
+                            },
+                            pngquant: {
+                                quality: [0.65, 0.9],
+                                speed: 4,
+                            },
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75,
+                            },
+                        },
+                    },
+                ],
+                type: 'asset/resource',
+                generator: {
+                    filename: 'src/img/[name][ext]',
+                },
+            },
+            {
+                test: /.(svg|ico)/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'src/img/[name][ext]',
+                },
             },
         ],
     },
@@ -40,6 +77,5 @@ const baseConfig = {
 module.exports = ({ mode }) => {
     const isProductionMode = mode === 'prod';
     const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
-
     return merge(baseConfig, envConfig);
 };

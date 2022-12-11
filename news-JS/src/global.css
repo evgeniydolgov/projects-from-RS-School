@@ -1,35 +1,67 @@
 body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: #fff;
-    background: #17181c;
+    background: url(./img/dlya-tvittera-53.jpg) 0 0/100% 100% no-repeat fixed;
     font-family: sans-serif;
+    height: 100vh;
 }
 
 header {
+    margin: 0;
+    display: block;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
     padding: 10px 30px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 header h1 {
+    margin: 0;
+    display: block;
+    z-index: 5;
     font-size: 40px;
     font-weight: 800;
 }
+
+
 
 footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
+
 footer .copyright {
     font-size: 14px;
     color: #333;
     text-align: center;
 }
+
 footer .copyright a {
     color: #444;
 }
+
 footer .copyright a:hover {
     color: #555;
 }
+
 footer .copyright:before {
     content: '©';
+}
+
+.school {
+    width: 60px;
+}
+
+.github {
+    background: url(./img/icons8-github.svg) 0 0/100% 100% no-repeat;
+    width: 40px;
+    height: 40px;
 }
