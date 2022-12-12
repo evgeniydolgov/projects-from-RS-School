@@ -1,8 +1,8 @@
 import AppLoader from './appLoader';
-import { ViewInterface, Generic } from '../../types/index';
+import { ViewInterface, GenericCallback } from '../../types/index';
 
 class AppController extends AppLoader {
-    getSources(callback: Generic<ViewInterface>): void {
+    getSources(callback: GenericCallback<ViewInterface>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Readonly<Event>, callback: Generic<ViewInterface>): void {
+    getNews(e: Readonly<Event>, callback: GenericCallback<ViewInterface>): void {
         let target: HTMLElement = <HTMLElement>e.target;
         const newsContainer: HTMLElement = <HTMLElement>e.currentTarget;
 
