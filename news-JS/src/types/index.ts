@@ -1,11 +1,11 @@
 interface NewsBlock {
-    urlToImage: string;
-    author: string;
+    readonly urlToImage: string;
+    readonly author: string;
     readonly source: { name: string };
-    publishedAt: string;
-    title: string;
-    description: string;
-    url: string;
+    readonly publishedAt: string;
+    readonly title: string;
+    readonly description: string;
+    readonly url: string;
 }
 
 interface SourseInterface {
@@ -35,6 +35,6 @@ enum ErrorsNumbers {
     NotFound = 404,
 }
 
-type Generic<Date> = (data: Date) => void;
+type GenericCallback<Data> = (data: Data) => void;
 
-export { NewsBlock, SourseInterface, ViewInterface, Links, ErrorsNumbers, Generic };
+export { NewsBlock, SourseInterface, ViewInterface, Links, ErrorsNumbers, GenericCallback };
