@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(115, 85, 46);
+}
+
+.car_changes {
+    display: flex;
+}
+
+.car_control {
+    display: flex;
+
+}
+
+.distancy {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    border-bottom: 1px dashed black;
+}
+
+.finish-line{
+    display: flex;
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.car-img {
+    width: 100px;
+    height: 50px;
+    // background: url(assets/img/car.svg)0 0/contain no-repeat;
+}
+
+.car-img>svg {
+    position: relative;
+}
+
+.finish-line {
+    width: 50px;
+    height: 50px;
+    background: url(assets/img/flag.svg)0 0/contain no-repeat;
+}
