@@ -3,12 +3,11 @@ const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-//const CopyWebpackPlugin = require('copy-webpack-plugin');
 const EslintPlugin = require('eslint-webpack-plugin');
 
 const baseConfig = {
-    devServer: {
-      open: true,
+  devServer: {
+    open: true,
   },
   entry: path.resolve(__dirname, './src/index.ts'),
   mode: 'development',
@@ -23,14 +22,15 @@ const baseConfig = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.ts$/i, use: 'ts-loader',
+        test: /\.ts$/i,
+        use: 'ts-loader',
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-      ],
-    },
+    ],
+  },
   resolve: {
     extensions: ['.ts', '.js'],
   },
@@ -51,6 +51,7 @@ const baseConfig = {
 
 module.exports = ({ mode }) => {
   const isProductionMode = mode === 'prod';
+  // eslint-disable-next-line global-require
   const envConfig = isProductionMode ? require('./webpack.prod.config') : require('./webpack.dev.config');
 
   return merge(baseConfig, envConfig);

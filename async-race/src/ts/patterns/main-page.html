@@ -1,0 +1,53 @@
+<section class="select_page">
+  <div class="page-button">
+    <button class="page-button__garage button" id="garage-btn">To Garage</button>
+    <button class="page-button__winlist button" id="winners-btn">To Winners</button>
+  </div>
+</section>
+<section class="garage-page" id="garage-page">
+  <section class="creating_menu container">
+    <div class="creating-car" id="creating-car">
+      <input id="newNameCar" type="text" />
+      <div class="creating-car__color"><input id="creating-color" type="color" /></div>
+      <button id="creating_btn">Creat</button>
+    </div>
+    <div class="change-car" id="change-car">
+      <input id="changeNameCar" type="text" />
+      <div class="change-car__color"><input id="change-color" type="color" /></div>
+      <button id="change_btn">Change</button>
+    </div>
+    <div class="race-button">
+      <button id="race-start" class="button">RACE</button>
+      <button id="race-stop" class="button disable-change">RESET</button>
+      <button id="creats100cars">GENERATION CARS</button>
+    </div>
+  </section>
+  <section class="car-race" id="car-race">
+    <div class="garage-info" id="garage-info"></div>
+  </section>
+  <section>
+    <div class="numberpage-info" id="numberpage-info">Page ()</div>
+    <button id="prev_page">prev</button>
+    <button id="next_page">next</button>
+  </section>
+</section>
+<section class="winners_page" id="winners">
+  <section class="winners_list" id="winners_list">
+    <div id="winner_info"></div>
+    <div id="winner_page"></div>
+  </section>
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>Number</th>
+          <th>Car</th>
+          <th>Name</th>
+          <th>Wins</th>
+          <th>Best time</th>
+        </tr>
+      </thead>
+      <tbody class="win_table" id="winTable"></tbody>
+    </table>
+  </section>
+</section>
