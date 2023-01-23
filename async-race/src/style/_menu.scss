@@ -16,3 +16,22 @@
     vertical-align:middle;
     text-align: center;
 }
+
+.wins_table{
+    cursor: pointer;
+}
+
+.time_table{
+    cursor: pointer;
+}
+.activ_filter{
+    border: 2px solid #02c4ff;
+}
+.win_massage{
+    position: absolute;
+    top: 150px;
+    left: 40vw;
+}
+.table-section{
+    display: none;
+}

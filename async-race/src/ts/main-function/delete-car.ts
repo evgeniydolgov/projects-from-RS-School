@@ -1,5 +1,6 @@
 import { renderPage } from '../..';
 import { RaceAdress } from '../basic-page-info';
+import { deleteWinner } from './changes-winlist';
 import { drawsPagination } from './render-cars';
 
 export async function deleteCar(id: string) {
@@ -13,6 +14,7 @@ export async function deleteCar(id: string) {
   if (!paginationPage.length) {
     RaceAdress.pageNumber -= 1;
   }
-  renderPage();
+  await deleteWinner(id);
+  await renderPage();
   return response;
 }

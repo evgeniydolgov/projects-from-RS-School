@@ -1,4 +1,5 @@
 <section class="select_page">
+  <h1 class="win_massage" id="win_massage"></h1>
   <div class="page-button">
     <button class="page-button__garage button" id="garage-btn">To Garage</button>
     <button class="page-button__winlist button" id="winners-btn">To Winners</button>
@@ -36,18 +37,21 @@
     <div id="winner_info"></div>
     <div id="winner_page"></div>
   </section>
-  <section>
+  <section class="table-section" id="table-section">
     <table>
       <thead>
         <tr>
           <th>Number</th>
           <th>Car</th>
           <th>Name</th>
-          <th>Wins</th>
-          <th>Best time</th>
+          <th class="wins_table" id="wins_counter">Wins</th>
+          <th class="time_table activ_filter" id="time_table">Best time</th>
         </tr>
       </thead>
       <tbody class="win_table" id="winTable"></tbody>
     </table>
+    <div class="numberpage-info" id="numberwinList">Page ()</div>
+    <button id="prev_winpage">prev</button>
+    <button id="next_winpage">next</button>
   </section>
 </section>

@@ -5,7 +5,7 @@ import creatingCar from '../patterns/creating-car.html';
 export async function drawsPagination() {
   const response = await fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`);
   const CarInGarage = await response.json();
-  winInfo.allCars.push(CarInGarage);
+  winInfo.allCars = Object.assign([], CarInGarage);
   RaceAdress.carInGarage = CarInGarage.length;
   const startNum = RaceAdress.pageNumber * 7;
   return CarInGarage.splice(startNum, 7);

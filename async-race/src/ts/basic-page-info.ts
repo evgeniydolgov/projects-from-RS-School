@@ -17,7 +17,11 @@ export const RaceAdress: RaceAdressInterface = {
 
 export const winInfo: Winners = {
   showWinners: '/winners',
-  winList: [],
+  changeFilter: 'time',
+  winPageNumber: 0,
+  maxWinPage: 0,
+  winner: '',
+  winListMemory: [],
   allCars: [],
 };
 

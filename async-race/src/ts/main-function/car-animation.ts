@@ -1,4 +1,5 @@
 import { RaceAdress } from '../basic-page-info';
+import { addNewWinner } from './changes-winlist';
 
 async function engineCheck(id: string, index: number) {
   try {
@@ -33,8 +34,8 @@ export function startAnimation(id: string, duration: number) {
 
         if (currentX < Number(RaceAdress.raceWidth[i][id])) {
           requestAnimationFrame(tick);
-        } else {
-          console.log(currentX);
+        } else if (RaceAdress.canWin && RaceAdress.raceWidth[i][id] !== '0') {
+          addNewWinner(id, duration, carsSvg[i].dataset.carName);
         }
       };
       tick();

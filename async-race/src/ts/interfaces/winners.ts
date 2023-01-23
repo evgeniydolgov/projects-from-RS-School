@@ -2,8 +2,17 @@ import { CreatedCarInterface } from './creat-car';
 
 export interface Winners {
   showWinners: string;
-  winList: OneWinCar[];
+  changeFilter: string;
+  winPageNumber: number;
+  maxWinPage: number;
+  winner: string;
+  winListMemory: OneWinCar[];
   allCars: CreatedCarInterface[];
+}
+
+export interface WinCar {
+  id: string;
+  time: number;
 }
 
 export interface OneWinCar {

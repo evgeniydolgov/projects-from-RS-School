@@ -1,3 +1,5 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { RaceAdress, winInfo } from '../basic-page-info';
@@ -7,14 +9,14 @@ import creatingWinList from '../patterns/string-winlist.html';
 
 async function createdWinList() {
   const winString = document.querySelector('#winTable') as HTMLElement;
-  winString.innerHTML = ''; // спорное решение, нужен рендер таблице не зависящий от рендера гаража
+  winString.innerHTML = '';
   const responseCar = await fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`);
-  const carInGarage = await responseCar.json();
+  const allcarInGarage = await responseCar.json();
   const response = await fetch(`${RaceAdress.urlPath}${winInfo.showWinners}`);
   const winList = await response.json();
 
   for (let i = 0; i < winList.length; i += 1) {
-    carInGarage.find((el: GettingCarInterface) => {
+    allcarInGarage.find((el: GettingCarInterface) => {
       if (el.id === winList[i].id) {
         return Object.assign(winList[i], el);
       }
@@ -56,16 +58,38 @@ function creatTime(index: number, time: string) {
   (<HTMLTableElement>timerOfWinners[index]).textContent = `${time} sec`;
 }
 
+function paginationWinList(array: OneWinCar[]) {
+  const startNum = winInfo.winPageNumber * 10;
+  return array.splice(startNum, 10);
+}
+
+function counterWinListPages() {
+  const numberWinlistPage = document.querySelector('#numberwinList') as HTMLElement;
+  numberWinlistPage.textContent = `Page №${winInfo.winPageNumber + 1}`;
+}
+
 export async function renderWinTable() {
   const winList = await createdWinList();
-  winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.time) > Number(b.time) ? 1 : -1));
-  winList.forEach((el: OneWinCar, index: number) => {
-    console.log(el);
+  winInfo.maxWinPage = winList.length;
+  winInfo.winListMemory = Object.assign([], winList); //возможно придется стирать, перед записью
+
+  if (winInfo.changeFilter === 'time') {
+    winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.time) > Number(b.time) ? 1 : -1));
+  } else {
+    winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.wins) > Number(b.wins) ? -1 : 1));
+  }
+
+  const viewWinners = paginationWinList(winList);
+
+  viewWinners.forEach((el: OneWinCar, index: number) => {
     creatOneTableString();
     creatWinPosition(index);
     creatImgWinCar(index, el.color);
     creatNameWinCar(index, el.name);
     creatWinsNumber(index, el.wins);
     creatTime(index, el.time);
+    counterWinListPages();
   });
+  console.log(winInfo.winListMemory);
+  console.log(winInfo.allCars);
 }
