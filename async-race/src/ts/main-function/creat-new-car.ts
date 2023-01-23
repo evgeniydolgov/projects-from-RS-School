@@ -1,6 +1,5 @@
 import { renderPage } from '../..';
 import { RaceAdress, shakerCarName } from '../basic-page-info';
-// import { CreatedCarInterface } from '../interfaces/creat-car';
 
 async function postNewCar(carName: string, carColor: string) {
   const respone = fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`, {
@@ -42,20 +41,4 @@ export function createdRandomArr() {
     });
   }
   renderPage();
-
-  // randomArr.map((el: CreatedCarInterface) => {
-  //   const newCarObj = shakerCarName();
-  //   el = newCarObj;
-  //   const respone = fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       ...el,
-  //     }),
-  //   });
-  //   return respone;
-  // });
-  // renderPage();
 }

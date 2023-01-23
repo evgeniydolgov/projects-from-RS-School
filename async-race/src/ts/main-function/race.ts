@@ -23,10 +23,3 @@ export async function stopRaceFunc() {
     stopAnimation(keys[0], i.toString());
   });
 }
-
-export function showTheWinner() {
-  if (RaceAdress.canWin) {
-    // eslint-disable-next-line spaced-comment
-    //доделать победителя, м.б. создать еще обьект содержищий победоносную инфу
-  }
-}

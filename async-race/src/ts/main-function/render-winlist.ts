@@ -71,7 +71,7 @@ function counterWinListPages() {
 export async function renderWinTable() {
   const winList = await createdWinList();
   winInfo.maxWinPage = winList.length;
-  winInfo.winListMemory = Object.assign([], winList); //возможно придется стирать, перед записью
+  winInfo.winListMemory = Object.assign([], winList);
 
   if (winInfo.changeFilter === 'time') {
     winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.time) > Number(b.time) ? 1 : -1));
@@ -90,6 +90,4 @@ export async function renderWinTable() {
     creatTime(index, el.time);
     counterWinListPages();
   });
-  console.log(winInfo.winListMemory);
-  console.log(winInfo.allCars);
 }
