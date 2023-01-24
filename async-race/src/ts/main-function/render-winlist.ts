@@ -27,6 +27,11 @@ async function createdWinList() {
   return winList;
 }
 
+function creatAllWinnersCount(allWinners: number) {
+  const allWinnerNum = document.querySelector('#all-winners-number') as HTMLElement;
+  allWinnerNum.textContent = `Winners: ${allWinners}`;
+}
+
 async function creatOneTableString() {
   const winString = document.querySelector('#winTable') as HTMLElement;
   winString.insertAdjacentHTML('beforeend', creatingWinList);
@@ -69,14 +74,28 @@ function counterWinListPages() {
 }
 
 export async function renderWinTable() {
+  const winArr = document.querySelector('#win-arr') as HTMLElement;
+  const timeArr = document.querySelector('#time-arr') as HTMLElement;
   const winList = await createdWinList();
   winInfo.maxWinPage = winList.length;
   winInfo.winListMemory = Object.assign([], winList);
 
-  if (winInfo.changeFilter === 'time') {
+  if (winInfo.changeFilter === 'time' && winInfo.arrow === 'up') {
     winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.time) > Number(b.time) ? 1 : -1));
-  } else {
+    timeArr.textContent = '↑';
+    winInfo.arrow = 'down';
+  } else if (winInfo.changeFilter === 'time' && winInfo.arrow === 'down') {
+    winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.time) < Number(b.time) ? 1 : -1));
+    timeArr.textContent = '↓';
+    winInfo.arrow = 'up';
+  } else if (winInfo.arrow === 'up') {
+    winArr.textContent = '↓';
     winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.wins) > Number(b.wins) ? -1 : 1));
+    winInfo.arrow = 'down';
+  } else {
+    winArr.textContent = '↑';
+    winList.sort((a: OneWinCar, b: OneWinCar) => (Number(a.wins) < Number(b.wins) ? -1 : 1));
+    winInfo.arrow = 'up';
   }
 
   const viewWinners = paginationWinList(winList);
@@ -89,5 +108,6 @@ export async function renderWinTable() {
     creatWinsNumber(index, el.wins);
     creatTime(index, el.time);
     counterWinListPages();
+    creatAllWinnersCount(winInfo.winListMemory.length);
   });
 }

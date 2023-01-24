@@ -18,6 +18,7 @@ export const RaceAdress: RaceAdressInterface = {
 export const winInfo: Winners = {
   showWinners: '/winners',
   changeFilter: 'time',
+  arrow: 'up',
   winPageNumber: 0,
   maxWinPage: 0,
   winner: '',

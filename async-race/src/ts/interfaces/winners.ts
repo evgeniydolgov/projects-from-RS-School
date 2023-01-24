@@ -6,6 +6,7 @@ export interface Winners {
   winPageNumber: number;
   maxWinPage: number;
   winner: string;
+  arrow: string;
   winListMemory: OneWinCar[];
   allCars: CreatedCarInterface[];
 }
