@@ -1,7 +1,3 @@
-/* eslint-disable spaced-comment */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable max-len */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { RaceAdress, winInfo } from '../basic-page-info';
 import { GettingCarInterface } from '../interfaces/car';
 import { OneWinCar } from '../interfaces/winners';
@@ -9,7 +5,7 @@ import creatingWinList from '../patterns/string-winlist.html';
 
 async function createdWinList() {
   const winString = document.querySelector('#winTable') as HTMLElement;
-  winString.innerHTML = '';
+  winString.textContent = '';
   const responseCar = await fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`);
   const allcarInGarage = await responseCar.json();
   const response = await fetch(`${RaceAdress.urlPath}${winInfo.showWinners}`);
@@ -64,13 +60,15 @@ function creatTime(index: number, time: string) {
 }
 
 function paginationWinList(array: OneWinCar[]) {
-  const startNum = winInfo.winPageNumber * 10;
-  return array.splice(startNum, 10);
+  const viewCarOnPage = 10;
+  const startNum = winInfo.winPageNumber * viewCarOnPage;
+  return array.splice(startNum, viewCarOnPage);
 }
 
 function counterWinListPages() {
+  const countFromOne = 1;
   const numberWinlistPage = document.querySelector('#numberwinList') as HTMLElement;
-  numberWinlistPage.textContent = `Page №${winInfo.winPageNumber + 1}`;
+  numberWinlistPage.textContent = `Page №${winInfo.winPageNumber + countFromOne}`;
 }
 
 export async function renderWinTable() {

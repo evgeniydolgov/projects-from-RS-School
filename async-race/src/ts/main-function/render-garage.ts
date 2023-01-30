@@ -26,7 +26,7 @@ export async function garageMenuToHTML() {
   if (insertPage === null) {
     throw new Error("Can't find elment in document");
   }
-  insertPage.innerHTML = '';
+  insertPage.textContent = '';
   insertPage.insertAdjacentHTML('beforeend', garageMenu);
 
   const count = await allCarOnServer();

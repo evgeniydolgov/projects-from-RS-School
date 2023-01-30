@@ -13,7 +13,7 @@ export async function deleteWinner(id: string) {
 async function updateWinner(id: string, winNum: string, timeNum: number) {
   const times = timeNum;
   const winsNum = Number(winNum);
-  fetch(`${RaceAdress.urlPath}${winInfo.showWinners}/${id}`, {
+  await fetch(`${RaceAdress.urlPath}${winInfo.showWinners}/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ async function updateWinner(id: string, winNum: string, timeNum: number) {
 
 async function createWinner(id: string, timeNum: number) {
   const newId = +id;
-  fetch(`${RaceAdress.urlPath}${winInfo.showWinners}`, {
+  await fetch(`${RaceAdress.urlPath}${winInfo.showWinners}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ async function createWinner(id: string, timeNum: number) {
 }
 
 export function addNewWinner(id: string, timers: number, name: string | undefined) {
-  const winMassage = document.querySelector('#win_massage') as HTMLElement;
+  const winMessage = document.querySelector('#win_massage') as HTMLElement;
   const car = winInfo.winListMemory.find((el) => String(el.id) === id);
 
   let bestTime = Math.ceil(timers / 1000);
@@ -57,9 +57,9 @@ export function addNewWinner(id: string, timers: number, name: string | undefine
     createWinner(id, bestTime);
     renderWinTable();
   }
-  winMassage.textContent = `THE WINNER IS ${name} WITH ${bestTime} sec`;
+  winMessage.textContent = `THE WINNER IS ${name} WITH ${bestTime} sec`;
   setTimeout(() => {
-    winMassage.innerHTML = '';
+    winMessage.textContent = '';
   }, 5000);
   RaceAdress.canWin = false;
 }

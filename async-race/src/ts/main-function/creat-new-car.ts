@@ -2,7 +2,7 @@ import { renderPage } from '../..';
 import { RaceAdress, shakerCarName } from '../basic-page-info';
 
 async function postNewCar(carName: string, carColor: string) {
-  const respone = fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`, {
+  const respone = await fetch(`${RaceAdress.urlPath}${RaceAdress.allCarGarage}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

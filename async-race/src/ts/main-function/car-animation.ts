@@ -18,13 +18,16 @@ async function engineCheck(id: string, index: number) {
 }
 
 export function startAnimation(id: string, duration: number) {
+  const startBlockWidth = 180;
+  const framesPerSecond = 60;
+  const decimalConversion = 1000;
   const carsSvg = document.querySelectorAll('#car-svg') as NodeListOf<HTMLElement>;
   for (let i = 0; i < carsSvg.length; i += 1) {
     const keys = Object.keys(RaceAdress.raceWidth[i]);
-    if (keys[0] === id) RaceAdress.raceWidth[i][id] = `${document.documentElement.clientWidth - 180}`;
+    if (keys[0] === id) RaceAdress.raceWidth[i][id] = `${document.documentElement.clientWidth - startBlockWidth}`;
 
     let currentX = 0;
-    const framesCount = (duration / 1000) * 60;
+    const framesCount = (duration / decimalConversion) * framesPerSecond;
     const dx = (Number(RaceAdress.raceWidth[i][id]) - currentX) / framesCount;
 
     if (carsSvg[i].dataset.carId === id) {
